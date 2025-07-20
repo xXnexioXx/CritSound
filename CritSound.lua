@@ -42,7 +42,7 @@ f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:SetScript("OnEvent",function()
     local e={CombatLogGetCurrentEventInfo()}
     local ev,g,d,c=e[2],e[4],e[15],e[21]
-    if g==UnitGUID("player")and c and d and d>=CritSoundCharDB.critNumber and(ev=="SWING_DAMAGE"or ev=="SPELL_DAMAGE"or ev=="RANGE_DAMAGE")then
+    if g==UnitGUID("player")and c and d and d>=CritSoundCharDB.critNumber and(ev=="SWING_DAMAGE"or ev=="SPELL_DAMAGE"or ev=="RANGE_DAMAGE"or ev=="SPELL_PERIODIC_DAMAGE")then
         local t=GetTime()local cd=math.random(300,800)/1000
         if t-l>=cd then PlaySoundFile("Interface\\AddOns\\CritSound\\"..CritSoundCharDB.sound,"Master")l=t end
     end
