@@ -27,7 +27,9 @@ setBtn:SetScript("OnClick",function()
     UpdateStatus()
 end)
 
-testBtn:SetScript("OnClick",function()PlaySoundFile("Interface\\AddOns\\CritSound\\"..CritSoundCharDB.sound,"Master")end)
+testBtn:SetScript("OnClick",function()
+    PlaySoundFile("Interface\\AddOns\\CritSound\\"..CritSoundCharDB.sound,"Master")
+end)
 
 f:SetScript("OnShow",function()
     critInput:SetText(CritSoundCharDB.critNumber)
@@ -43,13 +45,20 @@ f:SetScript("OnShow",function()
     UpdateStatus()
 end)
 
+local lastSoundTime = 0
+
 f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:SetScript("OnEvent",function()
     local e={CombatLogGetCurrentEventInfo()}
     local event,srcGUID,damage,crit=e[2],e[4],e[15],e[21]
     if(srcGUID==UnitGUID("player")and crit and damage and damage>=CritSoundCharDB.critNumber and(
         event=="SWING_DAMAGE"or event=="SPELL_DAMAGE"or event=="RANGE_DAMAGE"))then
-        PlaySoundFile("Interface\\AddOns\\CritSound\\"..CritSoundCharDB.sound,"Master")
+        local now = GetTime()
+        local cooldown = math.random(300,800)/1000 -- 0.3 bis 0.8 Sekunden
+        if now - lastSoundTime >= cooldown then
+            PlaySoundFile("Interface\\AddOns\\CritSound\\"..CritSoundCharDB.sound,"Master")
+            lastSoundTime = now
+        end
     end
 end)
 
