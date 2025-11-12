@@ -1,7 +1,8 @@
-## Interface: 11507
+## Interface: 11508
 ## Title: |TInterface\Icons\|t |cffffffffCritSound|r |cffffffffby|r |cffff0000nexio|r
 ## Notes: use /cs to open
 ## Author: Nexio
 ## Version: 1.1
 ## SavedVariablesPerCharacter: CritSoundCharDB
 CritSound.lua
+
