@@ -2,7 +2,18 @@
 ## Title: |TInterface\Icons\|t |cffffffffCritSound|r |cffffffffby|r |cffff0000nexio|r
 ## Notes: use /cs to open
 ## Author: Nexio
+## IconTexture: Interface\AddOns\CritSound\cs
 ## Version: 1.1
 ## SavedVariablesPerCharacter: CritSoundCharDB
+## Category-enUS: Combat
+## Category-deDE: Kampf
+## Category-esES: Combate
+## Category-esMX: Combate
+## Category-frFR: Combat
+## Category-itIT: Combattimento
+## Category-koKR: 전투
+## Category-ptBR: Combate
+## Category-ruRU: Бой
+## Category-zhCN: 战斗
+## Category-zhTW: 戰鬥
 CritSound.lua
-
