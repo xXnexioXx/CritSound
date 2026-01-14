@@ -1,2 +1,2 @@
 # CritSound
-Small Addon for Wow Classic ERA
+Small Addon for Wow Classic
